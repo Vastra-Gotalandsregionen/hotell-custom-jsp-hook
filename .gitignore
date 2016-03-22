@@ -1,0 +1,15 @@
+.DS_Store
+
+.classpath
+.project
+.settings
+
+*.iml
+.idea/
+
+rebel.xml
+
+target/*
+
+core-bc/modules/hook/bin/*
+core-bc/modules/hook/target/*

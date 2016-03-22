@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!--
+This is the Web-app Maven POM.
+
+
+Template version: 1.4
+Generation time : 2011-11-16 10:41:22 CET
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>se.vgregion.hotell-custom-jsp-hook</groupId>
+    <artifactId>hotell-custom-jsp-hook-core-bc</artifactId>
+    <version>1.3-SNAPSHOT</version>
+    <relativePath>../../pom.xml</relativePath>
+  </parent>
+  <groupId>se.vgregion.hotell-custom-jsp-hook</groupId>
+  <artifactId>hotell-custom-jsp-hook-core-bc-module-hook</artifactId>
+  <packaging>war</packaging>
+  <name>${project.artifactId}</name>
+
+  <build>
+    <finalName>hotell-customjsp-hook</finalName>
+    <plugins>
+      <plugin>
+        <!-- Configure eclipse plug-in to generate a context root that does not have the version number on it -->
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-eclipse-plugin</artifactId>
+        <configuration>
+          <wtpContextName>${project.artifactId}</wtpContextName>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>com.mycila.maven-license-plugin</groupId>
+        <artifactId>maven-license-plugin</artifactId>
+        <version>1.8.0</version>
+        <configuration>
+          <header>http://oppna-program.googlecode.com/files/header.txt</header>
+          <skipExistingHeaders>true</skipExistingHeaders>
+          <excludes>
+            <exclude>target/**</exclude>
+            <exclude>**/NOTICES.txt</exclude>
+            <exclude>thirdpartylicenses/**</exclude>
+            <exclude>**/LICENSE.rtf</exclude>
+            <exclude>**/context.xml</exclude>
+            <exclude>**/*.properties</exclude>
+            <exclude>**/*.sql</exclude>
+            <exclude>**/*.jsp</exclude> <!-- Added -->
+            <exclude>**/*.jspf</exclude> <!-- Added -->
+            <exclude>**/aui-*.js</exclude> <!-- Added -->
+          </excludes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <repositories>
+  </repositories>
+
+  <dependencies>
+  </dependencies>
+</project>
