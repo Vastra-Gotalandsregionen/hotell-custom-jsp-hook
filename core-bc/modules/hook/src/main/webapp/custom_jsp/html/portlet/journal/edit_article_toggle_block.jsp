@@ -11,16 +11,18 @@
         insertToggleButtons(item);
     });
 
-    ddmContainer.on('ddmContainer:fieldInserted', function(e) {
-        var insertedNode = A.one('#' + e.nodeId);
-        var insertedNodeParent = insertedNode.ancestor();
+    if(ddmContainer) {
+        ddmContainer.on('ddmContainer:fieldInserted', function(e) {
+            var insertedNode = A.one('#' + e.nodeId);
+            var insertedNodeParent = insertedNode.ancestor();
 
-        var insertedNodeFieldWrappers = insertedNodeParent.all('.field-wrapper');
+            var insertedNodeFieldWrappers = insertedNodeParent.all('.field-wrapper');
 
-        insertedNodeFieldWrappers.each(function(item, index, list) {
-            insertToggleButtons(item);
+            insertedNodeFieldWrappers.each(function(item, index, list) {
+                insertToggleButtons(item);
+            });
         });
-    });
+    }
 
     journalArticleContainer.delegate('click', function(e) {
 
